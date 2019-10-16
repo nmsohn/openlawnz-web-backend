@@ -4,29 +4,32 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:nodist": "node -r dotenv/config index.js",
+    "dev:nodist": "nodemon --exec babel-node index.js",
     "start": "node index",
     "dev": "rm -rf debug && mkdir debug && babel index.js -o debug/index.js --presets @babel/env && node -r dotenv/config debug/index.js",
     "build": "rm -rf .tmp && mkdir .tmp && mkdir -p dist && babel index.js -o .tmp/index.js --presets @babel/env && cp package.json .tmp/ && zip dist/dist.zip .tmp/* -j && rm -rf .tmp",
     "test": "rm -rf .tmp && mkdir .tmp && mkdir -p dist && babel index.js -o .tmp/index.js --presets @babel/env && cp package.json .tmp/ && zip dist/dist.zip .tmp/* -j && rm -rf .tmp"
   },
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "jwks-rsa": "^1.6.0",
     "pg": "^7.12.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
     "dotenv": "^8.1.0",
     "eslint": "^6.5.1",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "nodemon": "^1.19.4"
   },
   "resolutions": {
     "lodash": "^4.17.14"
