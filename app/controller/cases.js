@@ -5,13 +5,17 @@ export function create (req, res) {
   const userId = req.user.sub || 0
   Cases.insert(data, userId, (err, result) => {
     if (err) {
-      res.sendStatus(500).send('error')
+      res.status(500).send(err.stack)
     } else {
-      res.sendStatus(201).send('Create Case success')
+      res.status(201).send(result)
     }
   })
 }
 
 export function update (req, res) {
-  res.sendStatus(500).send('Not implemented')
+  res.status(500).send('Not implemented')
+}
+
+export function del (req, res) {
+  res.status(500).send('Not implemented')
 }
