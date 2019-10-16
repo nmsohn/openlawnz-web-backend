@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+const _ = require('lodash')
 dotenv.config()
 
 function sanitizeEnv (requiredEnvVars) {
@@ -11,4 +12,8 @@ function sanitizeEnv (requiredEnvVars) {
   }
 }
 
-module.exports = { sanitizeEnv }
+function snakify (obj) {
+  return _.mapKeys(obj, (value, key) => _.snakeCase(key))
+}
+
+module.exports = { sanitizeEnv, snakify }
