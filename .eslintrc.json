@@ -46,7 +46,7 @@
           "always"
       ],
       "node/no-unpublished-require": ["error", {
-          "allowModules": ["dotenv"],
+          "allowModules": ["dotenv", "@babel/core"],
           "tryExtensions": [".js", ".json", ".node"]
       }],
       "node/prefer-promises/dns": "error",
