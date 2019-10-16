@@ -1,9 +1,8 @@
 require('dotenv').config()
 require('@babel/core')
-
-const app = require('./config/express.js')
+const app = require('./config/express')
 const DB_HOST = process.env.DB_HOST || 'localhost'
-const PORT = process.env.PORT || 5000
+const PORT = process.env.NODE_PORT || 3000
 
 app.listen(PORT, () => {
   console.log(`
