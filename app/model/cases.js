@@ -2,9 +2,9 @@ const db = require('./index')
 
 export function insert (data, userId, done) {
   const values = [...Object.values(data)]
-  const keys = [...Object.keys(data)]
+  const keys = [...Object.keys(data)].join(',')
   const wildcards = values.map((val, idx) => '$' + (idx + 1)).join(',')
-  const sql = `INSERT INTO cases.cases (${keys.join(',')}) VALUES (${wildcards})`
+  const sql = `INSERT INTO cases.cases (${keys}) VALUES (${wildcards})`
 
   db.query(sql, values)
     .then(result => {
