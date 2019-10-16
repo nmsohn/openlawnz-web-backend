@@ -1,5 +1,4 @@
 const pool = require('../../config/config')
 
-pool.connect().finally(() => pool.end())
-
+// end pool connection
 module.exports = pool
