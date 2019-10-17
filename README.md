@@ -1,6 +1,8 @@
-## openlawnz-api
+## openlawnz-backend
 
-* Uses [Postgraphile](https://www.graphile.org) An automatic graphql API | PRO LICENCE
+This is the temporary solution for the private API. Auth0 has been setup by Noel if you have any questions about it slack him.
+
+If you are new be sure to read the workflow [Wiki](https://github.com/openlawnz/openlawnz-api/wiki).
 
 ## Setup
 
@@ -9,16 +11,16 @@ Requires Linux (maybe macOS)
 Make a ```.env``` file with the database connection details.
 
 	yarn install
-	npm run dev
+	npm run dev:nodist
 
 Visit https://api.openlaw.nz/graphiql to try out the API
 Use this uri for the api: https://api.openlaw.nz/graphql
 
 ## Deploy
 
-	npm run build
-	
-Generates a zip file to upload
+Make sure conflicts are resolved first.
+Send a Pull request to the master branch
+When Approved to master branch should be set up with a deployment pipeline and it will be deployed.
 
 ## NOTICE
 
